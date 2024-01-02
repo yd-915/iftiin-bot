@@ -1,6 +1,6 @@
 const { getInvoices } = require('lightning');
 const lnd = require('./connect');
-const subscribeInvoice = require('./subscribe_invoice');
+const { subscribeInvoice } = require('./subscribe_invoice');
 const { Order } = require('../models');
 const logger = require('../logger');
 
@@ -29,7 +29,7 @@ const resubscribeInvoices = async bot => {
     }
     logger.info(`Invoices resubscribed: ${invoicesReSubscribed}`);
   } catch (error) {
-    logger.error(`ResuscribeInvoice catch: ${error.toString()}`);
+    logger.error(`ResubcribeInvoice catch: ${error.toString()}`);
     return false;
   }
 };
